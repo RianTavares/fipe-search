@@ -1,8 +1,14 @@
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { BrandsProvider } from '@/context/BrandsContext';
+import { ResultsProvider } from '@/context/ResultsContext';
+import { Roboto } from "next/font/google";
+import { GlobalStyles } from '@/styles/global';
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700']
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +21,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+      <html lang="en">
+        <body className={roboto.className}>
+          <GlobalStyles />
+          <ResultsProvider>
+            <BrandsProvider>
+              <AppRouterCacheProvider>
+                {children}
+              </AppRouterCacheProvider>
+            </BrandsProvider>
+          </ResultsProvider>
+        </body>
+      </html>
   );
 }
