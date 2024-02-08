@@ -23,6 +23,6 @@ export const useFetchModels = (brandCode: string | undefined) => {
         fetchModels();
     }, [brandCode]);
 
-    return { models, disableModelInput };
+    return { models, disableModelInput, setDisableModelInput, setModels};
 };
 

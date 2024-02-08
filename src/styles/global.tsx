@@ -3,7 +3,6 @@ import { Global, css } from '@emotion/react';
 
 export const global = css`
 :root {
-    --gutter: 4px;
     --background: #f9f5fb;
 
     --color-white-0: #ffffff;

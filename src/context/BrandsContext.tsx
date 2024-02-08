@@ -1,15 +1,8 @@
 "use client"
-
-import { 
-    createContext, 
-    useEffect, 
-    useState 
-} from "react";
-
-type BrandType = {
-    codigo: string;
-    nome: string;
-};
+import { createContext, ReactNode, useEffect, useState } from "react";
+import Box from '@mui/material/Box';
+import Loader from "@/components/Loading/Loading";
+import { BrandType } from "@/types";
 
 type BrandContextType = {
     brands: BrandType[];
@@ -17,8 +10,8 @@ type BrandContextType = {
     isReady: boolean;
 };
 
-type WithChildrenProps = {
-    children: React.ReactNode
+type BrandsProviderProps = {
+    children: ReactNode;
 };
 
 export const BrandContext = createContext<BrandContextType>({
@@ -27,28 +20,22 @@ export const BrandContext = createContext<BrandContextType>({
     isReady: false,
 });
 
-export const BrandsProvider = ({children}: WithChildrenProps) => {
+export const BrandsProvider = ({ children }: BrandsProviderProps) => {
     const [brands, setBrands] = useState<BrandType[]>([]);
     const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
         const fetchBrands = async () => {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-            if (typeof apiUrl === 'undefined') {
-                console.error('A URL da API não está definida no .env');
-                setIsReady(false);
-                return;
-            }
-
             try {
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+                if (!apiUrl) throw new Error('A URL da API não está definida no .env');
+
                 const response = await fetch(apiUrl);
-                if (!response.ok) {
-                    throw new Error('Falha ao buscar dados da API');
-                }
+                if (!response.ok) throw new Error('Falha ao buscar dados da API');
+
                 const fetchedBrands: BrandType[] = await response.json();
                 setBrands(fetchedBrands);
                 setIsReady(true);
-
             } catch (error) {
                 console.error("Erro ao buscar marcas:", error);
                 setIsReady(false);
@@ -60,7 +47,16 @@ export const BrandsProvider = ({children}: WithChildrenProps) => {
 
     return (
         <BrandContext.Provider value={{ brands, setBrands, isReady }}>
-            {isReady ? children : <div>Carregando...</div>}
+            {isReady ? children : (
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minHeight: '100vh'
+                }}>
+                    <Loader />
+                </Box>
+            )}
         </BrandContext.Provider>
     );
-}
+};
