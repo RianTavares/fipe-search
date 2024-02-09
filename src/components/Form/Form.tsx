@@ -5,7 +5,7 @@ import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { useFetchModels, useFetchYears } from '@/hooks';
 import { BrandContext, ResultsContext } from "@/context";
 import { BrandType, ModelType, YearType } from '@/types';
-import { autocompleteClassTest, disabledButton, FormContainer, SearchButton } from "./Form.style"
+import { autocompleteClassTest, disabledButton, FormContainer, SearchButton } from "./Form.style";
 
 export default function Form() {
     const [selectedBrand, setSelectedBrand] = useState<BrandType | null>(null);
@@ -44,11 +44,11 @@ export default function Form() {
 
     useEffect(() => {
         setDisableModelInput(!selectedBrand);
-    }, [selectedBrand]);
+    }, [selectedBrand, selectedModel, setDisableModelInput]);
     
     useEffect(() => {
         setShowYearInput(!!selectedModel);
-    }, [selectedModel]);
+    }, [selectedModel, setShowYearInput]);
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();

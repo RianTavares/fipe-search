@@ -21,7 +21,7 @@ export const useFetchYears = (modelCode: string | undefined, selectedBrand: Bran
         };
 
         fetchYears();
-    }, [modelCode]);
+    }, [modelCode, selectedBrand?.codigo]);
 
     return { years, showYearInput, setShowYearInput, setYears };
 };
