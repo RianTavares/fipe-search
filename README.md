@@ -11,6 +11,7 @@ Esse projeto consiste em um buscador de preços de automoveis na tabela FIPE. Es
 <p align="center"><img src="./src/assets/imgs/demo.gif"></p>
 
 ## Setup Rápido
+*Primeiramente tenha certeza que voce possuí [Node](https://nodejs.org/en) instalado em seu computado, versão 18 ou superior.
 1. Faça o download ou clone o projeto e extraia
 2. Rode o comando `npm install` para instalar todas as dependencias do projeto
 3. Crie um `.env` na raíz do seu projeto e adicione a URL base como variável de ambiente `NEXT_PUBLIC_API_URL=https://parallelum.com.br/fipe/api/v1/carros/marcas`, basta copiar do arquivo `.env.example`
@@ -26,3 +27,10 @@ Esse projeto consiste em um buscador de preços de automoveis na tabela FIPE. Es
 - Testes unitários usando Jest + React Testing Library nos arquivos de contextos, hooks, páginas e componentes
 - Husky com pre-commit configurado para rodar todos os testes e o lint em "staged files" antes de cada commit, com intuito de manter a consistência do projeto
 - [MUI](https://mui.com/material-ui/react-stack/) com [emotion](https://emotion.sh/docs/introduction)
+
+## Testes
+
+Caso queira rodar os testes manualmente, basta rodar o comando `npm test`.
+
+Caso deseje rodar automaticamente, basta criar um commit qualquer e deixar o Husky pre-commit fazer o trabalho dele. 
+<p align="center"><img src="./src/assets/imgs/demo-test.gif"></p>
