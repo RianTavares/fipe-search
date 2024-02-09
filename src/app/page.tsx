@@ -1,21 +1,13 @@
-
 "use client"
-import Form from "@/components/Form";
-import Results from '@/components/Results/Results';
-import { 
-  ContentCard,
-  MainContent,
-  Title,
-  Subtitle 
-} from './page.style';
-import { value } from "@/mocks";
+import { Form, Results } from '@/components';
+import { ContentCard, MainContent, Title, Subtitle } from './page.style';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <MainContent>
       <ContentCard>
         <Title>Tabela Fipe</Title>
-        <Subtitle>Consulte o valor de um veículo de forma gratuita</Subtitle>
+        <Subtitle>Consulte o valor de um veículo gratuitamente</Subtitle>
         <Form />
       </ContentCard>
       <Results />

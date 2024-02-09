@@ -1,7 +1,7 @@
 "use client"
 import { createContext, ReactNode, useEffect, useState } from "react";
 import Box from '@mui/material/Box';
-import Loader from "@/components/Loading/Loading";
+import { Loader } from "@/components";
 import { BrandType } from "@/types";
 
 type BrandContextType = {

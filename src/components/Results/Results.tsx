@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ResultsContext } from '@/context/ResultsContext';
+import { ResultsContext } from '@/context';
 import { Price, ResultContainer, SmallWarning, Title } from './Results.style';
 
 const Results = () => {

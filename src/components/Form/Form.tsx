@@ -2,10 +2,8 @@ import Alert from '@mui/material/Alert';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import { ChangeEvent, useContext, useEffect, useState } from "react";
-import { useFetchModels } from '@/hooks/useFetchModels';
-import { useFetchYears } from '@/hooks/useFetchYears';
-import { BrandContext } from "@/context/BrandsContext";
-import { ResultsContext } from '@/context/ResultsContext';
+import { useFetchModels, useFetchYears } from '@/hooks';
+import { BrandContext, ResultsContext } from "@/context";
 import { BrandType, ModelType, YearType } from '@/types';
 import { autocompleteClassTest, disabledButton, FormContainer, SearchButton } from "./Form.style";
 
@@ -66,6 +64,7 @@ export default function Form() {
                 setIsFetching(true);
                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${selectedBrand
                     .codigo}/modelos/${selectedModel.codigo}/anos/${selectedYear.codigo}`);
+
                 if (!response.ok) {
                     throw new Error('Falha na busca do preço');
                 }

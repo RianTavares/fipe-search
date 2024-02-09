@@ -1,7 +1,7 @@
 "use client"
 
 import React, { createContext, useState, ReactNode } from 'react';
-import { SearchResultType } from '@/types/results';
+import { SearchResultType } from '@/types';
 
 type ResultsContextType = {
   results: SearchResultType | null;
