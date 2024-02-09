@@ -34,7 +34,7 @@ export const global = css`
   }
 `
 
-export const GlobalStyles = () => {
+export function GlobalStyles() {
   return (
     <Global styles={global} />
   )

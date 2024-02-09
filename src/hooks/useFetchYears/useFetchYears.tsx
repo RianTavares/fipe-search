@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ModelType, BrandType } from '@/types';
 
-export const useFetchYears = (modelCode: string | undefined, selectedBrand: BrandType | null) => {
+export function useFetchYears(modelCode: string | undefined, selectedBrand: BrandType | null) {
     const [years, setYears] = useState<ModelType[]>([]);
     const [showYearInput, setShowYearInput] = useState(false);
 
@@ -25,4 +25,3 @@ export const useFetchYears = (modelCode: string | undefined, selectedBrand: Bran
 
     return { years, showYearInput, setShowYearInput, setYears };
 };
-

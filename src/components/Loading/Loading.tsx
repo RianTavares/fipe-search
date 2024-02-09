@@ -1,6 +1,6 @@
 import { LoaderContainer } from './Loading.style';
 
-const Loader = () => {
+function Loader() {
     return <LoaderContainer data-testid="loader-container"/>;
 };
   

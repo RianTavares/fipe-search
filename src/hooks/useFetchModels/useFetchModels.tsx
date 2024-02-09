@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ModelType } from '@/types';
 
-export const useFetchModels = (brandCode: string | undefined) => {
+export function useFetchModels(brandCode: string | undefined) {
     const [models, setModels] = useState<ModelType[]>([]);
     const [disableModelInput, setDisableModelInput] = useState(true);
 

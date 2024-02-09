@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { ResultsContext } from '@/context';
 import { Price, ResultContainer, SmallWarning, Title } from './Results.style';
 
-const Results = () => {
+function Results() {
     const { results } = useContext(ResultsContext);
     const hasResults = !!results;
 
