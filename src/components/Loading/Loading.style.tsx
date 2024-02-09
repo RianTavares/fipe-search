@@ -42,7 +42,7 @@ const round = keyframes`
 
 export const LoaderContainer = styled.span`
   color: var(--color-purple-0);
-  font-size: 45px;
+  font-size: var(--font-size-3xl);
   text-indent: -9999em;
   overflow: hidden;
   width: 1em;

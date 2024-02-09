@@ -9,7 +9,7 @@ export const MainContent = styled.main`
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 0 24px;
+    padding: 0 var(--space-6x);
 
     ${tabletLand} {
         padding: 0;
@@ -21,25 +21,25 @@ export const ContentCard = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: var(--space-5x);
     
     text-align: center;
 `
 
 export const Subtitle = styled.p`
     font-weight: 500;
-    font-size: 20px;
+    font-size: var(--font-size-m);
 
     ${tabletLand} {
-        font-size: 30px;
+        font-size: var(--font-size-xl);
     }
 `
 
 export const Title = styled.h1`
     font-weight: 600;
-    font-size: 26px;
+    font-size: var(--font-size-l);
 
     ${tabletLand} {
-        font-size: 36px;
+        font-size: var(--font-size-2xl);
     }
 `

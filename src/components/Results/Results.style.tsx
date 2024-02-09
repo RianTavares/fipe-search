@@ -10,27 +10,27 @@ interface ResultContainerProps {
 
 const fontBaseTextStyle = css`
     font-weight: 500;
-    font-size: 20px;
+    font-size: var(--font-size-m);
 
     ${tabletLand} {
-        font-size: 30px;
+        font-size: var(--font-size-xl);
     }
 `;
 
 export const ResultContainer = styled.div<ResultContainerProps>`
     background-color: var(--color-green-0);
     width: 100vw;
-    padding: 56px 24px 26px 24px;
+    padding: var(--space-14x) var(--space-6x) var(--space-7x) var(--space-6x);
     text-align: center;
 
     display: ${props => props.hasResults ? 'flex' : 'none'};
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 81px;
+    margin-top: var(--space-20x);
 
     ${tabletLand} {
-        padding: 56px 0 26px 0;
+        padding: var(--space-14x) 0 var(--space-7x) 0;
     }
 `;
 
@@ -40,15 +40,15 @@ export const Title = styled.p`
 
 export const Price = styled.p`
     ${fontBaseTextStyle}
-    padding: 12px 18px;
+    padding: var(--space-3x) var(--space-5x);
     border-radius: 40px;
     background-color: #34A38C;
     color: var(--color-white-0);
-    margin-top: 20px;
+    margin-top: var(--space-5x);
 `;
 
 export const SmallWarning = styled.p`
     color: var(--font-color-tertiary);
-    font-size: 14px;
-    margin-top: 16px;
+    font-size: var(--font-size-xs);
+    margin-top: var(--space-4x);
 `;
