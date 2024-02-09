@@ -1,11 +1,19 @@
 import styled from '@emotion/styled'
+import { breakpoints } from '@/styles/global';
+
+const { tabletLand } = breakpoints;
 
 export const MainContent = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;  
+    min-height: 100vh;
+    padding: 0 24px;
+
+    ${tabletLand} {
+        padding: 0;
+    }
 `
 
 export const ContentCard = styled.div`
@@ -20,10 +28,18 @@ export const ContentCard = styled.div`
 
 export const Subtitle = styled.p`
     font-weight: 500;
-    font-size: 30px;
+    font-size: 20px;
+
+    ${tabletLand} {
+        font-size: 30px;
+    }
 `
 
 export const Title = styled.h1`
     font-weight: 600;
-    font-size: 36px;
+    font-size: 26px;
+
+    ${tabletLand} {
+        font-size: 36px;
+    }
 `

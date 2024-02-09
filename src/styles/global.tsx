@@ -34,6 +34,13 @@ export const global = css`
   }
 `
 
+export const breakpoints = {
+  desktop: '@media only screen and (min-width: 1280px)',
+  tabletLand: '@media only screen and (min-width: 975px)',
+  tablet: '@media only screen and (min-width: 600px)',
+  mobileLand: '@media only screen and (min-width: 480px',
+};
+
 export function GlobalStyles() {
   return (
     <Global styles={global} />

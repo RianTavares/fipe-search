@@ -1,8 +1,13 @@
 import styled from '@emotion/styled'
+import { Theme } from '@emotion/react';
+import { SxProps } from '@mui/system';
+import { breakpoints } from '@/styles/global';
+
+const { tabletLand } = breakpoints;
 
 export const FormContainer = styled.form`
     background: var(--color-white-0);
-    width: fit-content;
+    width: 100%;
     padding: 36px 62px;
     border-radius: 8px;
 
@@ -10,6 +15,10 @@ export const FormContainer = styled.form`
     flex-direction: column;
     align-items: center;
     gap: 20px;
+
+    ${tabletLand} {
+        width: fit-content;
+    }
 `
 
 export const SearchButton = styled.button`
@@ -25,9 +34,12 @@ export const SearchButton = styled.button`
     font-size: 16px;
 `
 
-export const autocompleteClassTest = {
-    width: 500,
+export const autocompleteClassTest: SxProps<Theme> = {
+    width: '100%',
     fontFamily: 'var(--font-primary)',
+    [tabletLand]: {
+        width: '500px',
+    },
 };
 
 export const disabledButton = {

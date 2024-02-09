@@ -1,5 +1,8 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react';
+import { breakpoints } from '@/styles/global';
+
+const { tabletLand } = breakpoints;
 
 interface ResultContainerProps {
     hasResults: boolean;
@@ -7,19 +10,28 @@ interface ResultContainerProps {
 
 const fontBaseTextStyle = css`
     font-weight: 500;
-    font-size: 30px;
+    font-size: 20px;
+
+    ${tabletLand} {
+        font-size: 30px;
+    }
 `;
 
 export const ResultContainer = styled.div<ResultContainerProps>`
     background-color: var(--color-green-0);
     width: 100vw;
-    padding: 56px 0 26px 0;
+    padding: 56px 24px 26px 24px;
+    text-align: center;
 
     display: ${props => props.hasResults ? 'flex' : 'none'};
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 81px;
+
+    ${tabletLand} {
+        padding: 56px 0 26px 0;
+    }
 `;
 
 export const Title = styled.p`
